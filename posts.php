@@ -20,3 +20,15 @@
  * dosyasını döngü içinde dahil etmeli ve her yazı için detayları göstermelisiniz.
  */
 
+require 'functions.php';
+
+$random_number=getRandomPostCount(0,10); //getRandomPostCount fonksiyonu sayesinde istediğimiz aralıkta rastgele sayı üretildi.
+$posts=getLatestPosts($random_number); //Ürettiğimiz rasgele sayı kadar getLatestPosts fonksiyonu  post oluşturdur.
+
+foreach($posts as $id=>$value) 
+{
+    include 'post.php';
+    
+}
+
+

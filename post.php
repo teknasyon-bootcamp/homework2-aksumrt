@@ -23,3 +23,46 @@
  * - `getPostDetails` fonksiyonu tetiklenerek ilgili içeriğin çıktısı gösterilmeli.
  */
 
+require_once 'functions.php';
+
+//$id değişkeni yoksa "1" değeri tanımlandı.
+if(!isset($id))  
+{
+    $id=1;
+}
+//$title değişkeni yoksa değer tanımlandı.
+if(!isset($value["title"]))
+{
+    $title="Test Yazısı";
+}
+else
+{
+    $title=$value["title"];
+}
+//$type değişkeni yoksa değer tanımlandı.
+if(!isset($value["type"]))
+{
+    $type="normal";
+}
+else
+{
+    $type=$value["type"];
+}
+//$type değişkenine göre renk kararı bölümü
+if($type=="warning")
+{
+    $bgcolor="background-color:yellow;";
+}
+elseif($type=="urgent")
+{
+    $bgcolor="background-color:red;";
+}
+elseif($type=="normal")
+{
+    $bgcolor="background-color:default;";
+}
+
+// getPostDetails fonksiyonu ile içeriğin ekrana bastırılması
+echo "<div style='".$bgcolor. "'>";
+getPostDetails($id,$title);
+echo "</div>";

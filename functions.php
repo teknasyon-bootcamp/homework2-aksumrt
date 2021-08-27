@@ -49,3 +49,17 @@ EOT;
 
 // Aşağıya fonksiyonu tanımlayabilirsiniz.
 
+
+
+if(basename($_SERVER['PHP_SELF'])==basename(__FILE__)) //Dosya yolunun ucundaki isimler karşılaştırıldı. functions.php dosyasına erişim engellendi.
+{                                                       
+    exit("<strong style='font-size:72px;'>Bu sayfaya erişim yasaktır!</strong>");
+}
+
+
+function getRandomPostCount($min,$max) //posts.php dosyasında verilen aralık değerleriyle random
+{                                      //sayı üretecek olan fonksiyon     
+    return rand($min,$max);
+}
+
+
