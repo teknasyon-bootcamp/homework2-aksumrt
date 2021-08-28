@@ -25,12 +25,12 @@
 
 require_once 'functions.php';
 
-//$id değişkeni yoksa "1" değeri tanımlandı.
+//If the $id variable does not exist, the value "1" was defined.
 if(!isset($id))  
 {
     $id=1;
 }
-//$title değişkeni yoksa değer tanımlandı.
+//If the $title variable does not exist, the value was defined.
 if(!isset($value["title"]))
 {
     $title="Test Yazısı";
@@ -39,7 +39,7 @@ else
 {
     $title=$value["title"];
 }
-//$type değişkeni yoksa değer tanımlandı.
+//If the $type variable does not exist, the value was defined.
 if(!isset($value["type"]))
 {
     $type="normal";
@@ -48,7 +48,7 @@ else
 {
     $type=$value["type"];
 }
-//$type değişkenine göre renk kararı bölümü
+//Color decision section according to $type variable
 if($type=="warning")
 {
     $bgcolor="background-color:yellow;";
@@ -62,7 +62,7 @@ elseif($type=="normal")
     $bgcolor="background-color:default;";
 }
 
-// getPostDetails fonksiyonu ile içeriğin ekrana bastırılması
+// Posts print section
 echo "<div style='".$bgcolor. "'>";
 getPostDetails($id,$title);
 echo "</div>";

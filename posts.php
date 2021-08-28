@@ -22,8 +22,8 @@
 
 require 'functions.php';
 
-$random_number=getRandomPostCount(0,10); //getRandomPostCount fonksiyonu sayesinde istediğimiz aralıkta rastgele sayı üretildi.
-$posts=getLatestPosts($random_number); //Ürettiğimiz rasgele sayı kadar getLatestPosts fonksiyonu  post oluşturdur.
+$random_number=getRandomPostCount(0,20); //Random number was generated in the desired range.
+$posts=getLatestPosts($random_number); //getLatestPosts function was created as much as the random number we generate.
 
 foreach($posts as $id=>$value) 
 {
