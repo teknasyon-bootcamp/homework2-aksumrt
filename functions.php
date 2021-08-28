@@ -16,6 +16,12 @@
  * bekliyoruz. Bununla ilgili detaylı bilgi diğer betiklerde yer alıyor.
  */
 
+//Permission section
+if(basename($_SERVER['PHP_SELF'])==basename(__FILE__)) //The file names at the end of the file path were compared. Access to functions.php is denied.
+{                                                       
+    exit("<strong style='font-size:72px;'>Bu sayfaya erişim yasaktır!</strong>");
+}
+
 function getLatestPosts($count = 5)
 {
     $posts = [];
@@ -49,16 +55,8 @@ EOT;
 
 // Aşağıya fonksiyonu tanımlayabilirsiniz.
 
-
-
-if(basename($_SERVER['PHP_SELF'])==basename(__FILE__)) //Dosya yolunun ucundaki isimler karşılaştırıldı. functions.php dosyasına erişim engellendi.
-{                                                       
-    exit("<strong style='font-size:72px;'>Bu sayfaya erişim yasaktır!</strong>");
-}
-
-
-function getRandomPostCount($min,$max) //posts.php dosyasında verilen aralık değerleriyle random
-{                                      //sayı üretecek olan fonksiyon     
+function getRandomPostCount($min,$max) //Function that will generate random numbers with range values ​​given in posts.php file.
+{                                     
     return rand($min,$max);
 }
 
